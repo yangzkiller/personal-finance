@@ -17,6 +17,8 @@ return new class extends Migration
             $table->decimal('value', 10, 2);
             $table->date('date_transaction');
             $table->foreignId('category_id')->constrained('expense_categories');
+            $table->boolean('is_fixed')->default(false);
+            $table->boolean('is_paid')->default(false);
             $table->timestamps();
         });
     }
